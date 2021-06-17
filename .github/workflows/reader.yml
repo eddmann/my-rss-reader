@@ -35,7 +35,7 @@ jobs:
               <h4>{{ post.title }}</h4>
               <a href="{{ post.feed_url }}">{{ post.feed_title }}</a>
               <time datetime='{{ post.date }}'>{{ post.date }}</date>
-              <p>{{ post.description }}</p>
+              <p>{{ post.description | striptags | trim | truncate(length=250) }}</p>
               <a href='{{ post.url }}' target='_blank'>Read more</a>
             {% endfor %}
             </body>
