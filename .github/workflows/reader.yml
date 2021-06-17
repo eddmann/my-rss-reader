@@ -28,9 +28,9 @@ jobs:
             </header>
             {% for post in posts %}
             <h4>{{ post.title }}</h4>
-            <a href="{{ post.feed_url }}">{{ post.feed_title }}</a>
+            <a href="{{ post.feed_url }}">{{ post.feed_title }}</a><br />
             <time datetime='{{ post.date }}'>{{ post.date }}</date>
-            <pre>{{ post.description | striptags | truncate(length=250) }}</pre>
+            <pre>{{ post.description | striptags | trim | truncate(length=250) }}</pre>
             <a href='{{ post.url }}' target='_blank'>Read more</a>
             {% endfor %}
             </body>
