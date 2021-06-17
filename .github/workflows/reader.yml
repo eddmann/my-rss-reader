@@ -1,6 +1,7 @@
 name: Update RSS Reader
 
 on:
+  push:
   workflow_dispatch:
 
 jobs:
@@ -14,4 +15,3 @@ jobs:
           feeds: |
             https://feeds.feedburner.com/symfony/blog
             https://blog.jetbrains.com/phpstorm/feed/
-            https://www.theregister.com/headlines.atom
