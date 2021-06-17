@@ -11,3 +11,7 @@ jobs:
       - uses: eddmann/github-rss-reader@v1
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+          feeds: |
+            https://feeds.feedburner.com/symfony/blog
+            https://blog.jetbrains.com/phpstorm/feed/
+            https://www.theregister.com/headlines.atom
