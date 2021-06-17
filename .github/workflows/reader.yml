@@ -39,3 +39,4 @@ jobs:
           feeds: |
             https://feeds.feedburner.com/symfony/blog
             https://blog.jetbrains.com/phpstorm/feed/
+            https://eddmann.com/rss.xml
