@@ -28,7 +28,7 @@ jobs:
             </header>
             {% for post in posts %}
             <h4>{{ post.title }}</h4>
-            {{ post.date | date(format="%Y-%m-%d') }}
+            {{ post.date | date(format="%d-%m-%Y") }}
             <a href="{{ post.feed_url }}">{{ post.feed_title }}</a><br />
             <time datetime='{{ post.date }}'>{{ post.date }}</date>
             <pre>{{ post.description | striptags | trim | truncate(length=250) }}</pre>
