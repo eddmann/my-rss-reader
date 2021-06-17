@@ -30,7 +30,7 @@ jobs:
             {% for post in posts | sort(attribute="date") | reverse | slice(end=25) %}
               {% set new_date = post.date | date %}
               {% if current_date != new_date %}
-                {% set current_date = new_date %}
+                {% set_global current_date = new_date %}
                 <h2>{{ new_date }}</h2>
               {% endif %}
               <h4>{{ post.title }}</h4>
