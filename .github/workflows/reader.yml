@@ -1,0 +1,13 @@
+name: Update RSS Reader
+
+on:
+  workflow_dispatch:
+
+jobs:
+  update:
+    name: 'Update RSS Reader'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: eddmann/github-rss-reader@v1
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
