@@ -13,32 +13,31 @@ jobs:
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
           template: |
-            <!DOCTYPE html>
-            <html lang='en'>
+            <!doctype html>
+            <html lang="en">
             <head>
-            <meta charset='UTF-8' />
-            <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-            <title>GitHub RSS Reader</title>
-            <link rel='stylesheet' href='//fonts.xz.style/serve/inter.css' />
-            <link rel='stylesheet' href='//cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css' />
+              <meta charset="utf-8">
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+              <title>My GitHub RSS Reader</title>
+              <link rel="stylesheet" href="https://unpkg.com/axist@latest/dist/axist.min.css" />
+              <style>
+              h3 { margin-top: 150px; }
+              h5 { margin-top: 100px; }
+              </style>
             </head>
             <body>
-            <header>
-            <h1>GitHub RSS Reader</h1>
-            </header>
-            {% set current_date = "" %}
-            {% for post in posts | sort(attribute="date") | reverse | slice(end=25) %}
-              {% set new_date = post.date | date %}
-              {% if current_date != new_date %}
-                {% set_global current_date = new_date %}
-                <h2>{{ new_date }}</h2>
-              {% endif %}
-              <h4>{{ post.title }}</h4>
-              <a href="{{ post.feed_url }}">{{ post.feed_title }}</a>
-              <time datetime='{{ post.date }}'>{{ post.date }}</date>
-              <p>{{ post.description | striptags | trim | truncate(length=250) }}</p>
-              <a href='{{ post.url }}' target='_blank'>Read more</a>
-            {% endfor %}
+              {% set current_date = "" %}
+              {% for post in posts | sort(attribute="date") | reverse | slice(end=25) %}
+                {% set new_date = post.date | date(format="%e %B") %}
+                {% if current_date != new_date %}
+                  {% set_global current_date = new_date %}
+                  <h3>{{ new_date }}</h3>
+                {% endif %}
+                <h5>{{ post.title }}</h5>
+                <p>📝 <a href="{{ post.feed_url }}">{{ post.feed_title }}</a></p>
+                <blockquote>{{ post.description | striptags | trim | truncate(length=250) }}</blockquote>
+                <a href='{{ post.url }}' target='_blank'>Read more…</a>
+              {% endfor %}
             </body>
             </html>
           feeds: |
