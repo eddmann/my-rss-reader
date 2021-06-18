@@ -21,8 +21,8 @@ jobs:
               <title>My GitHub RSS Reader</title>
               <link rel="stylesheet" href="https://unpkg.com/axist@latest/dist/axist.min.css" />
               <style>
-              h3 { margin-top: 150px; }
-              h5 { margin-top: 100px; }
+                h3 { margin-top: 150px; }
+                h5 { margin-top: 100px; }
               </style>
             </head>
             <body>
