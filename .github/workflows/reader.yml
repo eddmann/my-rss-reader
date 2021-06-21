@@ -50,6 +50,6 @@ jobs:
             https://tech.mybuilder.com/feed.xml
             https://blog.rust-lang.org/feed.xml
             https://matthiasnoback.nl/atom.xml
-            http://feeds.feedburner.com/AmazonWebServicesBlog
+            https://aws.amazon.com/blogs/aws/feed/
             https://offbynone.io/feed/
             https://www.php.net/feed.atom            
