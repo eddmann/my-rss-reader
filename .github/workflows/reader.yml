@@ -3,6 +3,8 @@ name: Update RSS Reader
 on:
   push:
   workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"  
 
 jobs:
   update:
