@@ -46,7 +46,6 @@ jobs:
             https://feeds.feedburner.com/symfony/blog
             https://blog.jetbrains.com/phpstorm/feed/
             https://eddmann.com/rss.xml
-            https://www.theregister.com/headlines.atom
             https://tech.mybuilder.com/feed.xml
             https://blog.rust-lang.org/feed.xml
             https://matthiasnoback.nl/atom.xml
